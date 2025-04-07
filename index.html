@@ -45,7 +45,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start; /* Align content items at the top */
             position: relative; /* Positioning for overlay */
             background-size: cover; /* Cover the entire section */
             background-position: center; /* Center the background */
@@ -73,7 +73,7 @@
 
         h2 {
             color: var(--highlight-color);
-            margin-bottom: 0.5rem; /* Reduced margin */
+            margin-bottom: 1rem; /* Increased margin for better space */
             font-size: 2.25rem; /* Reduced size */
             z-index: 2; /* Above overlay */
         }
@@ -82,7 +82,7 @@
             max-width: 800px; /* Limit the content width */
             text-align: center;
             z-index: 2; /* Above overlay */
-            margin-top: -20px; /* Move up closer to the image */
+            margin-top: 10px; /* Move margin down */
         }
 
         /* About Me image styling */
@@ -127,6 +127,9 @@
             color: white;
             transition: transform 0.3s, box-shadow 0.3s; /* Add shadow effect */
             height: 100px; /* Fixed height for uniform size */
+            display: flex; /* Flex to align content */
+            flex-direction: column; /* Column for stacking */
+            justify-content: space-between; /* Space between title and description */
         }
 
         .publication-item:hover {
@@ -159,15 +162,15 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            justify-content: flex-start; /* Align items to the left */
+            justify-content: center; /* Center items vertically */
             font-size: 1.25rem; /* Slightly reduced size */
             margin-left: 20px; /* Added margin from the left side */
+            margin-top: 20px; /* Add some space at the top */
             text-align: center; /* Align text to the center */
-            margin-top: -20%; /* Move the contact section up */
         }
 
         .contact-links a {
-            margin: 5px 0;
+            margin: 5px 0; /* Spacing between items */
             color: var(--highlight-color);
             text-decoration: none;
             font-weight: bold;
@@ -255,13 +258,16 @@
             <h2>Research Interests</h2>
             <div class="research-container">
                 <div class="research-box">
-                    <p><strong>Geoenvironmental Engineering:</strong> Remediation of Contaminated Soil, Sustainable Soil Stabilization, Fate of Contaminants in Soil, And Landfill Engineering</p>
+                    <p><strong>Geoenvironmental Engineering:</strong> Remediation of Contaminated Soil, Sustainable Soil Stabilization, Landfill Engineering
+                    </p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Geotechnical Engineering:</strong> Site Characterization, Multi-Physical Processes in Geomaterials, Soil Mechanics and Testing, And Erosion Mitigation</p>
+                    <p><strong>Geotechnical Engineering:</strong> Site Characterization, Soil Mechanics and Testing
+                    </p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Environmental Science and Sustainability:</strong> Circular Economy, Life Cycle Assessment, Climate Change Impacts, and Remote Sensing</p>
+                    <p><strong>Environmental Science:</strong> Circular Economy, Life Cycle Assessment, Climate Change Impacts
+                    </p>
                 </div>
             </div>
         </section>
