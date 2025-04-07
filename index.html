@@ -84,23 +84,39 @@
             z-index: 2; /* Above overlay */
         }
 
-        .projects, .papers {
+        /* Grid for publications */
+        .papers {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1rem;
             margin-top: 1rem;
+            width: 100%; /* Full width */
+            z-index: 2; /* Above overlay */
         }
 
-        .project-card, .paper-card {
+        .paper-card {
             background: var(--secondary-color);
             border-radius: 8px;
             padding: 1rem;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s; /* Add shadow effect */
             color: white;
+            position: relative; /* For hover effects */
         }
 
-        .project-card:hover, .paper-card:hover {
+        .paper-card:hover {
             transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elevated shadow effect */
+        }
+
+        /* Link styles */
+        .paper-card a {
+            color: white;
+            text-decoration: underline;
+            transition: color 0.3s; /* Transition for link color change */
+        }
+
+        .paper-card a:hover {
+            color: var(--highlight-color); /* Change color on hover */
         }
 
         footer {
@@ -141,7 +157,6 @@
 </head>
 
 <body>
-
     <!-- Main Container for Horizontal Scrolling -->
     <div class="container">
         <!-- About Section -->
@@ -183,27 +198,27 @@
                 <div class="paper-card" data-aos="flip-left">
                     <h3>"An Investigation on The Triaxial Changes of Zinc Contaminated Clayey Sand"</h3>
                     <p>International Journal of Geomechanics, 2024</p>
-                    <p><a href="https://doi.org/10.1061/IJGNAI.GMENG-8197" style="color: white;">Link to Paper</a></p>
+                    <p><a href="https://doi.org/10.1061/IJGNAI.GMENG-8197" target="_blank">Link to Paper</a></p>
                 </div>
                 <div class="paper-card" data-aos="flip-left">
                     <h3>"An Experimental Study of Sand–Clay Mixtures Contaminated with Lead and Zinc Heavy Metals"</h3>
-                    <p>GJournal of Hazardous, Toxic, and Radioactive Waste, 2021</p>
-                    <p><a href="https://doi.org/10.1061/(asce)hz.2153-5515.0000631" style="color: white;">Link to Paper</a></p>
+                    <p>Journal of Hazardous, Toxic, and Radioactive Waste, 2021</p>
+                    <p><a href="https://doi.org/10.1061/(asce)hz.2153-5515.0000631" target="_blank">Link to Paper</a></p>
                 </div>
                 <div class="paper-card" data-aos="flip-left">
                     <h3>"Physicochemical Changes of Lead (II) Contaminated Sand–Clay Mixture"</h3>
                     <p>SN Applied Sciences, 2020</p>
-                    <p><a href="https://doi.org/10.1007/s42452-020-03299-5" style="color: white;">Link to Paper</a></p>
+                    <p><a href="https://doi.org/10.1007/s42452-020-03299-5" target="_blank">Link to Paper</a></p>
                 </div>
                 <div class="paper-card" data-aos="flip-left">
                     <h3>"Seismic Performance of Tank Foundations Improved with Stone Columns"</h3>
                     <p>Civil Engineering Journal, 2020</p>
-                    <p><a href="https://doi.org/10.14311/CEJ.2020.03.0029" style="color: white;">Link to Paper</a></p>
+                    <p><a href="https://doi.org/10.14311/CEJ.2020.03.0029" target="_blank">Link to Paper</a></p>
                 </div>
                 <div class="paper-card" data-aos="flip-left">
                     <h3>"Soil Improvement" [BOOK]</h3>
                     <p>Qazvin Academic Center for Education, Culture and Research, 2019</p>
-                    <p><a href="https://acecr.ac.ir/fa/news/9240" style="color: white;">Link to Book</a></p>
+                    <p><a href="https://acecr.ac.ir/fa/news/9240" target="_blank">Link to Book</a></p>
                 </div>
             </div>
         </section>
@@ -238,7 +253,6 @@
         // Scroll event listener
         const sections = document.querySelectorAll('section');
         const container = document.querySelector('.container');
-
         let currentSection = 0;
 
         // Display the first section initially
@@ -246,7 +260,6 @@
 
         container.addEventListener('wheel', (e) => {
             e.preventDefault();
-
             if (e.deltaY > 0 && currentSection < sections.length - 1) {
                 // Scroll down
                 sections[currentSection].classList.remove('fade-in');
