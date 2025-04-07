@@ -24,15 +24,17 @@
             padding: 0;
             background-color: var(--light-gray);
             color: var(--text-color);
-            overflow-x: hidden; /* Prevent horizontal scroll of entire page */
+            overflow: hidden; /* Prevent overall scroll */
         }
 
         /* Main container for horizontal scroll */
         .container {
             display: flex;
-            overflow-x: auto; /* Enable horizontal scroll */
-            scroll-snap-type: x mandatory; /* Enable snapping */
+            flex-direction: row; /* Align sections horizontally */
             height: 100vh; /* Full viewport height */
+            scroll-snap-type: x mandatory; /* Enable snapping */
+            overflow-x: scroll; /* Enable horizontal scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling */
         }
 
         section {
@@ -45,9 +47,15 @@
             align-items: center;
             justify-content: center;
             background-color: var(--accent-color);
-            margin-right: 1rem; /* Space between sections */
             border-radius: 12px; /* Rounded corners */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            opacity: 0; /* Initial opacity for fade effect */
+            transition: opacity 0.8s ease-in-out; /* Fade effect */
+        }
+
+        /* Fade in effect */
+        section.fade-in {
+            opacity: 1;
         }
 
         h2 {
@@ -190,13 +198,57 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> My Portfolio. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
             duration: 1000, // Duration of animations
+        });
+
+        // Set dynamic year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Scroll event listener
+        const sections = document.querySelectorAll('section');
+        const container = document.querySelector('.container');
+
+        let currentSection = 0;
+
+        // Display the first section initially
+        sections[currentSection].classList.add('fade-in');
+
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault();
+
+            if (e.deltaY > 0 && currentSection < sections.length - 1) {
+                // Scroll down
+                sections[currentSection].classList.remove('fade-in');
+                currentSection++;
+                sections[currentSection].classList.add('fade-in');
+                container.scrollTo({
+                    left: currentSection * window.innerWidth,
+                    behavior: 'smooth',
+                });
+            } else if (e.deltaY < 0 && currentSection > 0) {
+                // Scroll up
+                sections[currentSection].classList.remove('fade-in');
+                currentSection--;
+                sections[currentSection].classList.add('fade-in');
+                container.scrollTo({
+                    left: currentSection * window.innerWidth,
+                    behavior: 'smooth',
+                });
+            }
+        });
+
+        // Resize event to maintain horizontal scrolling
+        window.addEventListener('resize', () => {
+            container.scrollTo({
+                left: currentSection * window.innerWidth,
+                behavior: 'auto',
+            });
         });
     </script>
 </body>
