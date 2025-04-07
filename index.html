@@ -126,7 +126,7 @@
             margin-bottom: 10px; /* Space between items */
             color: white;
             transition: transform 0.3s, box-shadow 0.3s; /* Add shadow effect */
-            cursor: pointer; /* Pointer cursor on hover */
+            height: 100px; /* Fixed height for uniform size */
         }
 
         .publication-item:hover {
@@ -157,12 +157,13 @@
 
         .contact-links {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             flex-direction: column;
             justify-content: flex-start; /* Align items to the left */
             font-size: 1.25rem; /* Slightly reduced size */
             margin-left: 20px; /* Added margin from the left side */
-            text-align: left; /* Align text to the left */
+            text-align: center; /* Align text to the center */
+            margin-top: -20%; /* Move the contact section up */
         }
 
         .contact-links a {
@@ -179,6 +180,29 @@
         /* Contact icons */
         .contact-icons i {
             margin-right: 5px; /* Space between icon and text */
+        }
+
+        /* Research Interest Styling */
+        .research-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Three boxes in a row */
+            gap: 10px; /* Space between boxes */
+            width: 100%; /* Full width */
+            z-index: 2; /* Above overlay */
+        }
+
+        .research-box {
+            background: var(--secondary-color);
+            border-radius: 8px;
+            padding: 1rem;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .research-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elevated shadow effect */
         }
 
         /* Scrollbar Styles */
@@ -229,15 +253,15 @@
         <!-- Research Section -->
         <section id="research" style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/046/252/114/small_2x/landscape-of-mining-truck-and-heavy-equipment-activity-mining-work-free-photo.jpg');" data-aos="fade-up">
             <h2>Research Interests</h2>
-            <div class="content">
+            <div class="research-container">
                 <div class="research-box">
-                    <p><strong>Geoenvironmental Engineering</strong>: Remediation of Contaminated Soil, Sustainable Soil Stabilization, Fate of Contaminants in Soil, And Landfill Engineering</p>
+                    <p><strong>Geoenvironmental Engineering:</strong> Remediation of Contaminated Soil, Sustainable Soil Stabilization, Fate of Contaminants in Soil, And Landfill Engineering</p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Geotechnical Engineering</strong>: Site Characterization, Multi-Physical Processes in Geomaterials, Soil Mechanics and Testing, And Erosion Mitigation</p>
+                    <p><strong>Geotechnical Engineering:</strong> Site Characterization, Multi-Physical Processes in Geomaterials, Soil Mechanics and Testing, And Erosion Mitigation</p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Environmental Science and Sustainability</strong>: Circular Economy, Life Cycle Assessment, Climate Change Impacts, and Remote Sensing</p>
+                    <p><strong>Environmental Science and Sustainability:</strong> Circular Economy, Life Cycle Assessment, Climate Change Impacts, and Remote Sensing</p>
                 </div>
             </div>
         </section>
