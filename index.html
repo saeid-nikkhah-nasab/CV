@@ -125,16 +125,16 @@
             padding: 1rem;
             margin-bottom: 10px; /* Space between items */
             color: white;
-            transition: transform 0.3s, box-shadow 0.3s; /* Add shadow effect */
             height: 100px; /* Fixed height for uniform size */
             display: flex; /* Flex to align content */
             flex-direction: column; /* Column for stacking */
             justify-content: space-between; /* Space between title and description */
         }
 
+        /* Remove hover effect */
         .publication-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elevated shadow effect */
+            transform: none; /* No scaling or shadow effect on hover */
+            box-shadow: none; /* Remove shadow effect */
         }
 
         /* Link styles */
@@ -180,11 +180,6 @@
             text-decoration: underline;
         }
 
-        /* Contact icons */
-        .contact-icons i {
-            margin-right: 5px; /* Space between icon and text */
-        }
-
         /* Research Interest Styling */
         .research-container {
             display: grid;
@@ -204,8 +199,8 @@
         }
 
         .research-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elevated shadow effect */
+            transform: none; /* No scaling effect on hover */
+            box-shadow: none; /* Remove shadow effect */
         }
 
         /* Scrollbar Styles */
@@ -258,16 +253,13 @@
             <h2>Research Interests</h2>
             <div class="research-container">
                 <div class="research-box">
-                    <p><strong>Geoenvironmental Engineering:</strong> Remediation of Contaminated Soil, Sustainable Soil Stabilization, Landfill Engineering
-                    </p>
+                    <p><strong>Geoenvironmental Engineering:</strong><br> Remediation of Contaminated Soil, Sustainable Soil Stabilization, Landfill Engineering</p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Geotechnical Engineering:</strong> Site Characterization, Soil Mechanics and Testing
-                    </p>
+                    <p><strong>Geotechnical Engineering:</strong><br> Site Characterization, Soil Mechanics and Testing</p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Environmental Science:</strong> Circular Economy, Life Cycle Assessment, Climate Change Impacts
-                    </p>
+                    <p><strong>Environmental Science:</strong><br> Circular Economy, Life Cycle Assessment, Climate Change Impacts</p>
                 </div>
             </div>
         </section>
