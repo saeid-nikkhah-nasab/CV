@@ -96,7 +96,7 @@
             position: relative; /* Relative positioning */
             z-index: 2; /* Ensure it's above the overlay */
         }
-        
+
         /* Center About Me section content */
         #about {
             justify-content: flex-start; /* Move content up */
@@ -126,6 +126,7 @@
             margin-bottom: 10px; /* Space between items */
             color: white;
             transition: transform 0.3s, box-shadow 0.3s; /* Add shadow effect */
+            cursor: pointer; /* Pointer cursor on hover */
         }
 
         .publication-item:hover {
@@ -156,7 +157,7 @@
 
         .contact-links {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             flex-direction: column;
             justify-content: flex-start; /* Align items to the left */
             font-size: 1.25rem; /* Slightly reduced size */
@@ -182,19 +183,22 @@
 
         /* Scrollbar Styles */
         .container::-webkit-scrollbar {
-            height: 8px;
+            display: none; /* Remove the scrollbar visibility */
         }
 
-        .container::-webkit-scrollbar-thumb {
+        .publications::-webkit-scrollbar {
+            width: 8px; /* Width of scrollbar */
+        }
+
+        .publications::-webkit-scrollbar-thumb {
             background: var(--highlight-color);
             border-radius: 10px;
         }
 
-        .container::-webkit-scrollbar-track {
+        .publications::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.1);
         }
     </style>
-
 </head>
 
 <body>
@@ -213,7 +217,7 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200907/pngtree-graduation-cap-school-supplies-blackboard-education-background-image_397993.jpg');" data-aos="fade-up">
+        <section id="education" style="background-image: url('https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg');" data-aos="fade-up">
             <h2>Education</h2>
             <div class="content">
                 <p class="education-item"><strong>PhD in Geotechnical Engineering</strong> - Shandong University, China (Expected Graduation: 2029)</p>
@@ -226,12 +230,15 @@
         <section id="research" style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/046/252/114/small_2x/landscape-of-mining-truck-and-heavy-equipment-activity-mining-work-free-photo.jpg');" data-aos="fade-up">
             <h2>Research Interests</h2>
             <div class="content">
-                <p>My research encompasses a variety of areas including:</p>
-                <ul>
-                    <li>Geoenvironmental Engineering: Remediation of Contaminated Soil, Sustainable Soil Stabilization, Fate of Contaminants in Soil, And Landfill Engineering</li>
-                    <li>Geotechnical Engineering: Site Characterization, Multi-Physical Processes in Geomaterials, Soil Mechanics and Testing, And Erosion Mitigation</li>
-                    <li>Environmental Science and Sustainability: Circular Economy, Life Cycle Assessment, Climate Change Impacts, and Remote Sensing</li>
-                </ul>
+                <div class="research-box">
+                    <p><strong>Geoenvironmental Engineering</strong>: Remediation of Contaminated Soil, Sustainable Soil Stabilization, Fate of Contaminants in Soil, And Landfill Engineering</p>
+                </div>
+                <div class="research-box">
+                    <p><strong>Geotechnical Engineering</strong>: Site Characterization, Multi-Physical Processes in Geomaterials, Soil Mechanics and Testing, And Erosion Mitigation</p>
+                </div>
+                <div class="research-box">
+                    <p><strong>Environmental Science and Sustainability</strong>: Circular Economy, Life Cycle Assessment, Climate Change Impacts, and Remote Sensing</p>
+                </div>
             </div>
         </section>
 
@@ -268,7 +275,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" style="background-image: url('https://img.freepik.com/premium-photo/signs-e-mail-phone-newsletter-wooden-blocks-blue-background-copy-space-text_738732-60.jpg');" data-aos="fade-up">
+        <section id="contact" style="background-image: url('https://www.vis.qa/wp-content/uploads/2022/09/contact-the-admisssions-1-2-scaled.jpg');" data-aos="fade-up">
             <h2>Contact Me</h2>
             <div class="content">
                 <div class="contact-links">
