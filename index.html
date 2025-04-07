@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhD Student Portfolio</title>
+    <title>Saeid NIKKHAH NASAB</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -46,9 +46,10 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: var(--accent-color);
-            border-radius: 12px; /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            position: relative; /* Positioning for overlay */
+            background-size: cover; /* Cover the entire section */
+            background-position: center; /* Center the background */
+            color: white; /* Set text color to white for contrast */
             opacity: 0; /* Initial opacity for fade effect */
             transition: opacity 0.8s ease-in-out; /* Fade effect */
         }
@@ -58,15 +59,29 @@
             opacity: 1;
         }
 
+        /* Overlay styles */
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1; /* Below the text but above the background */
+        }
+
         h2 {
             color: var(--highlight-color);
             margin-bottom: 1rem;
             font-size: 2.5rem; /* Larger heading */
+            z-index: 2; /* Above overlay */
         }
 
         .content {
             max-width: 800px; /* Limit the content width */
             text-align: center;
+            z-index: 2; /* Above overlay */
         }
 
         .projects, .papers {
@@ -130,7 +145,7 @@
     <!-- Main Container for Horizontal Scrolling -->
     <div class="container">
         <!-- About Section -->
-        <section id="about" data-aos="fade-up">
+        <section id="about" style="background-image: url('https://source.unsplash.com/featured/?nature');" data-aos="fade-up">
             <h2>About Me</h2>
             <div class="content">
                 <p>I am a PhD student specializing in Geoenvironmental Engineering. My research focuses on the interactions between contaminants and soil properties, and I am passionate about sustainable environmental practices.</p>
@@ -138,22 +153,22 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" data-aos="fade-up">
+        <section id="education" style="background-image: url('https://source.unsplash.com/featured/?university');" data-aos="fade-up">
             <h2>Education</h2>
             <div class="content">
-                <p><strong>PhD in Geoenvironmental Engineering</strong> - University Name (Expected Graduation: 2025)</p>
-                <p><strong>MSc in Geotechnical Engineering</strong> - University Name (2017 - 2020)</p>
-                <p><strong>BSc in Civil Engineering</strong> - University Name (2013 - 2017)</p>
+                <p><strong>PhD in Geotechnical Engineering</strong> - Shandong University, China (Expected Graduation: 2029)</p>
+                <p><strong>MSc in Geotechnical Engineering</strong> - Buein Zahra Technical University, Iran (2017 - 2020)</p>
+                <p><strong>BSc in Civil Engineering</strong> - Buein Zahra Technical University, Iran (2013 - 2017)</p>
             </div>
         </section>
 
         <!-- Research Section -->
-        <section id="research" data-aos="fade-up">
+        <section id="research" style="background-image: url('https://source.unsplash.com/featured/?research');" data-aos="fade-up">
             <h2>Research Interests</h2>
             <div class="content">
                 <p>My research encompasses a variety of areas including:</p>
                 <ul>
-                    <li>Contaminant Transport in Soil</li>
+                    <li>Environmental Geotechnics</li>
                     <li>Soil Remediation Techniques</li>
                     <li>Landfill and Waste Management</li>
                     <li>Environmental Impact Assessments</li>
@@ -162,35 +177,45 @@
         </section>
 
         <!-- Publications Section -->
-        <section id="publications" data-aos="fade-up">
+        <section id="publications" style="background-image: url('https://source.unsplash.com/featured/?papers');" data-aos="fade-up">
             <h2>Publications</h2>
             <div class="papers">
                 <div class="paper-card" data-aos="flip-left">
-                    <h3>Paper Title 1</h3>
-                    <p>Journal Name, Year</p>
-                    <p><a href="#" style="color: white;">Link to Paper</a></p>
+                    <h3>"An Investigation on The Triaxial Changes of Zinc Contaminated Clayey Sand"</h3>
+                    <p>International Journal of Geomechanics, 2024</p>
+                    <p><a href="https://doi.org/10.1061/IJGNAI.GMENG-8197" style="color: white;">Link to Paper</a></p>
                 </div>
                 <div class="paper-card" data-aos="flip-left">
-                    <h3>Paper Title 2</h3>
-                    <p>Journal Name, Year</p>
-                    <p><a href="#" style="color: white;">Link to Paper</a></p>
+                    <h3>"An Experimental Study of Sand–Clay Mixtures Contaminated with Lead and Zinc Heavy Metals"</h3>
+                    <p>GJournal of Hazardous, Toxic, and Radioactive Waste, 2021</p>
+                    <p><a href="https://doi.org/10.1061/(asce)hz.2153-5515.0000631" style="color: white;">Link to Paper</a></p>
                 </div>
                 <div class="paper-card" data-aos="flip-left">
-                    <h3>Paper Title 3</h3>
-                    <p>Journal Name, Year</p>
-                    <p><a href="#" style="color: white;">Link to Paper</a></p>
+                    <h3>"Physicochemical Changes of Lead (II) Contaminated Sand–Clay Mixture"</h3>
+                    <p>SN Applied Sciences, 2020</p>
+                    <p><a href="https://doi.org/10.1007/s42452-020-03299-5" style="color: white;">Link to Paper</a></p>
+                </div>
+                <div class="paper-card" data-aos="flip-left">
+                    <h3>"Seismic Performance of Tank Foundations Improved with Stone Columns"</h3>
+                    <p>Civil Engineering Journal, 2020</p>
+                    <p><a href="https://doi.org/10.14311/CEJ.2020.03.0029" style="color: white;">Link to Paper</a></p>
+                </div>
+                <div class="paper-card" data-aos="flip-left">
+                    <h3>"Soil Improvement" [BOOK]</h3>
+                    <p>Qazvin Academic Center for Education, Culture and Research, 2019</p>
+                    <p><a href="https://acecr.ac.ir/fa/news/9240" style="color: white;">Link to Book</a></p>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" data-aos="fade-up">
+        <section id="contact" style="background-image: url('https://source.unsplash.com/featured/?contact');" data-aos="fade-up">
             <h2>Contact Me</h2>
             <div class="content">
-                <p>Email: <a href="mailto:your-email@example.com" style="color: var(--highlight-color);">your-email@example.com</a></p>
+                <p>Email: <a href="mailto:saeid.nikkhah.nasab@gmail.com" style="color: var(--highlight-color);">saeid.nikkhah.nasab@gmail.com</a></p>
                 <div class="contact-links">
-                    <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
-                    <a href="https://github.com/yourprofile">GitHub</a>
+                    <a href="https://linkedin.com/in/saeid-nikkhah-nasab">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=mO3PEpEAAAAJ&sortby=pubdate">Google Scholar</a>
                 </div>
             </div>
         </section>
@@ -198,7 +223,7 @@
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; <span id="currentYear"></span> My Portfolio. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Saeid NIKKHAH NASAB. All rights reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
