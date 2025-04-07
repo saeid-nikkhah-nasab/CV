@@ -73,8 +73,8 @@
 
         h2 {
             color: var(--highlight-color);
-            margin-bottom: 1rem;
-            font-size: 3.75rem; /* Larger heading: 1.5 times the original size (2.5rem) */
+            margin-bottom: 0.5rem; /* Reduced margin */
+            font-size: 2.25rem; /* Reduced size */
             z-index: 2; /* Above overlay */
         }
 
@@ -82,47 +82,50 @@
             max-width: 800px; /* Limit the content width */
             text-align: center;
             z-index: 2; /* Above overlay */
+            margin-top: -20px; /* Move up closer to the image */
         }
 
         /* About Me image styling */
         .about-image {
-            width: 150px; /* Adjust size as needed */
-            height: 150px; /* Adjust size as needed */
+            width: 120px; /* Adjust size slightly smaller */
+            height: 120px; /* Adjust size slightly smaller */
             border-radius: 50%; /* Make it circular */
             background-size: cover; /* Cover the entire area */
             background-position: center; /* Center the image */
-            margin-bottom: 20px; /* Spacing below the image */
+            margin-bottom: 10px; /* Reduced spacing */
             position: relative; /* Relative positioning */
             z-index: 2; /* Ensure it's above the overlay */
         }
         
         /* Center About Me section content */
         #about {
-            justify-content: center; /* Center the content in the section */
+            justify-content: flex-start; /* Move content up */
         }
 
         /* Adjust education item sizes */
         .education-item {
-            font-size: 1.2rem; /* Slightly larger than the original font size */
+            font-size: 1rem; /* Reduced size */
         }
 
         /* Grid for publications */
         .papers {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1rem;
+            display: flex; /* Changed to flexbox for drag scrolling */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Enable snapping */
             margin-top: 1rem;
             width: 100%; /* Full width */
             z-index: 2; /* Above overlay */
         }
 
         .paper-card {
+            min-width: 300px; /* Maintain min width for cards */
             background: var(--secondary-color);
             border-radius: 8px;
             padding: 1rem;
             transition: transform 0.3s, box-shadow 0.3s; /* Add shadow effect */
             color: white;
             position: relative; /* For hover effects */
+            margin-right: 1rem; /* Margin for spacing between cards */
         }
 
         .paper-card:hover {
@@ -156,7 +159,7 @@
             align-items: center;
             flex-direction: column;
             justify-content: center; /* Center the items in Contact Me section */
-            font-size: 1.5rem; /* Increase font size 1.5 times */
+            font-size: 1.25rem; /* Slightly reduced size */
         }
 
         .contact-links a {
@@ -188,7 +191,6 @@
         .container::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.1);
         }
-
     </style>
 
 </head>
@@ -208,7 +210,7 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200907/pngtree-graduation-cap-school-supplies-blackboard-education-background-image_397993.jpg');" data-aos="fade-up">
+        <section id="education" style="background-image: url('https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg');" data-aos="fade-up">
             <h2>Education</h2>
             <div class="content">
                 <p class="education-item"><strong>PhD in Geotechnical Engineering</strong> - Shandong University, China (Expected Graduation: 2029)</p>
@@ -264,7 +266,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" style="background-image: url('https://img.freepik.com/premium-photo/signs-e-mail-phone-newsletter-wooden-blocks-blue-background-copy-space-text_738732-60.jpg');" data-aos="fade-up">
+        <section id="contact" style="background-image: url('https://www.shutterstock.com/image-photo/contact-us-concept-wood-block-600nw-1628797483.jpg');" data-aos="fade-up">
             <h2>Contact Me</h2>
             <div class="content">
                 <div class="contact-links">
@@ -320,6 +322,35 @@
                     behavior: 'smooth',
                 });
             }
+        });
+
+        // Make publications section horizontally draggable
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        const papers = document.querySelector('.papers');
+
+        papers.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - papers.offsetLeft;
+            scrollLeft = papers.scrollLeft;
+        });
+
+        papers.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        papers.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        papers.addEventListener('mousemove', (e) => {
+            if (!isDown) return; // Stop the function if mouse is not down
+            e.preventDefault();
+            const x = e.pageX - papers.offsetLeft;
+            const walk = (x - startX) * 2; // The distance to scroll
+            papers.scrollLeft = scrollLeft - walk;
         });
 
         // Resize event to maintain horizontal scrolling
