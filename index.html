@@ -74,7 +74,7 @@
         h2 {
             color: var(--highlight-color);
             margin-bottom: 1rem;
-            font-size: 2.5rem; /* Larger heading */
+            font-size: 3.75rem; /* Larger heading: 1.5 times the original size (2.5rem) */
             z-index: 2; /* Above overlay */
         }
 
@@ -94,6 +94,16 @@
             margin-bottom: 20px; /* Spacing below the image */
             position: relative; /* Relative positioning */
             z-index: 2; /* Ensure it's above the overlay */
+        }
+        
+        /* Center About Me section content */
+        #about {
+            justify-content: center; /* Center the content in the section */
+        }
+
+        /* Adjust education item sizes */
+        .education-item {
+            font-size: 1.2rem; /* Slightly larger than the original font size */
         }
 
         /* Grid for publications */
@@ -145,6 +155,8 @@
             display: flex;
             align-items: center;
             flex-direction: column;
+            justify-content: center; /* Center the items in Contact Me section */
+            font-size: 1.5rem; /* Increase font size 1.5 times */
         }
 
         .contact-links a {
@@ -176,12 +188,16 @@
         .container::-webkit-scrollbar-track {
             background: rgba(0, 0, 0, 0.1);
         }
+
     </style>
+
 </head>
 
 <body>
+
     <!-- Main Container for Horizontal Scrolling -->
     <div class="container">
+
         <!-- About Section -->
         <section id="about" style="background-image: none;" data-aos="fade-up">
             <div class="about-image" style="background-image: url('https://static.wixstatic.com/media/f8e62f_75a126d4493f4af39645129e594faed1~mv2.jpg/v1/crop/x_0,y_278,w_1009,h_1009/fill/w_470,h_470,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/23.jpg');"></div>
@@ -192,12 +208,12 @@
         </section>
 
         <!-- Education Section -->
-        <section id="education" style="background-image: url('https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg');" data-aos="fade-up">
+        <section id="education" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200907/pngtree-graduation-cap-school-supplies-blackboard-education-background-image_397993.jpg');" data-aos="fade-up">
             <h2>Education</h2>
             <div class="content">
-                <p><strong>PhD in Geotechnical Engineering</strong> - Shandong University, China (Expected Graduation: 2029)</p>
-                <p><strong>MSc in Geotechnical Engineering</strong> - Buein Zahra Technical University, Iran (2017 - 2020)</p>
-                <p><strong>BSc in Civil Engineering</strong> - Buein Zahra Technical University, Iran (2013 - 2017)</p>
+                <p class="education-item"><strong>PhD in Geotechnical Engineering</strong> - Shandong University, China (Expected Graduation: 2029)</p>
+                <p class="education-item"><strong>MSc in Geotechnical Engineering</strong> - Buein Zahra Technical University, Iran (2017 - 2020)</p>
+                <p class="education-item"><strong>BSc in Civil Engineering</strong> - Buein Zahra Technical University, Iran (2013 - 2017)</p>
             </div>
         </section>
 
@@ -248,7 +264,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" style="background-image: url('https://images.squarespace-cdn.com/content/v1/649478f7c0b878647724e3d2/1c45e114-a5d1-4858-aa76-9c4d411acae0/vecteezy_customer-contact-us-service-with-mail-email-telephone_14286469_914.jpg');" data-aos="fade-up">
+        <section id="contact" style="background-image: url('https://img.freepik.com/premium-photo/signs-e-mail-phone-newsletter-wooden-blocks-blue-background-copy-space-text_738732-60.jpg');" data-aos="fade-up">
             <h2>Contact Me</h2>
             <div class="content">
                 <div class="contact-links">
@@ -258,6 +274,7 @@
                 </div>
             </div>
         </section>
+
     </div>
 
     <!-- Footer Section -->
@@ -313,6 +330,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>
