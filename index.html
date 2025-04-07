@@ -84,6 +84,18 @@
             z-index: 2; /* Above overlay */
         }
 
+        /* About Me image styling */
+        .about-image {
+            width: 150px; /* Adjust size as needed */
+            height: 150px; /* Adjust size as needed */
+            border-radius: 50%; /* Make it circular */
+            background-size: cover; /* Cover the entire area */
+            background-position: center; /* Center the image */
+            margin-bottom: 20px; /* Spacing below the image */
+            position: relative; /* Relative positioning */
+            z-index: 2; /* Ensure it's above the overlay */
+        }
+
         /* Grid for publications */
         .papers {
             display: grid;
@@ -129,8 +141,14 @@
             width: 100%;
         }
 
+        .contact-links {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
         .contact-links a {
-            margin: 0 15px;
+            margin: 5px 0;
             color: var(--highlight-color);
             text-decoration: none;
             font-weight: bold;
@@ -138,6 +156,11 @@
 
         .contact-links a:hover {
             text-decoration: underline;
+        }
+
+        /* Contact icons */
+        .contact-icons i {
+            margin-right: 5px; /* Space between icon and text */
         }
 
         /* Scrollbar Styles */
@@ -160,7 +183,8 @@
     <!-- Main Container for Horizontal Scrolling -->
     <div class="container">
         <!-- About Section -->
-        <section id="about" style="background-image: url('https://static.wixstatic.com/media/f8e62f_75a126d4493f4af39645129e594faed1~mv2.jpg/v1/crop/x_0,y_278,w_1009,h_1009/fill/w_470,h_470,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/23.jpg');" data-aos="fade-up">
+        <section id="about" style="background-image: none;" data-aos="fade-up">
+            <div class="about-image" style="background-image: url('https://static.wixstatic.com/media/f8e62f_75a126d4493f4af39645129e594faed1~mv2.jpg/v1/crop/x_0,y_278,w_1009,h_1009/fill/w_470,h_470,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/23.jpg');"></div>
             <h2>About Me</h2>
             <div class="content">
                 <p>I am a PhD student specializing in Geoenvironmental Engineering. My research focuses on the interactions between contaminants and soil properties, and I am passionate about sustainable environmental practices.</p>
@@ -227,10 +251,10 @@
         <section id="contact" style="background-image: url('https://img.freepik.com/premium-photo/signs-e-mail-phone-newsletter-wooden-blocks-blue-background-copy-space-text_738732-60.jpg');" data-aos="fade-up">
             <h2>Contact Me</h2>
             <div class="content">
-                <p>Email: <a href="mailto:saeid.nikkhah.nasab@gmail.com" style="color: var(--highlight-color);">saeid.nikkhah.nasab@gmail.com</a></p>
                 <div class="contact-links">
-                    <a href="https://linkedin.com/in/saeid-nikkhah-nasab">LinkedIn</a>
-                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=mO3PEpEAAAAJ&sortby=pubdate">Google Scholar</a>
+                    <a href="mailto:saeid.nikkhah.nasab@gmail.com"><i class="fas fa-envelope"></i> saeid.nikkhah.nasab@gmail.com</a>
+                    <a href="https://linkedin.com/in/saeid-nikkhah-nasab"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=mO3PEpEAAAAJ&sortby=pubdate"><i class="fab fa-google-scholar"></i> Google Scholar</a>
                 </div>
             </div>
         </section>
