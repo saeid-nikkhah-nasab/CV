@@ -31,10 +31,12 @@
         .container {
             display: flex;
             flex-direction: row; /* Align sections horizontally */
+            max-width: 1200px; /* Limit the maximum width */
             height: 90vh; /* Slightly reduced for a smaller screen */
             scroll-snap-type: x mandatory; /* Enable snapping */
             overflow-x: auto; /* Enable horizontal scrolling */
             scroll-behavior: smooth; /* Smooth scrolling */
+            margin: auto; /* Center the container */
         }
 
         section {
@@ -102,11 +104,6 @@
             justify-content: flex-start; /* Move content up */
         }
 
-        /* Adjust education item sizes */
-        .education-item {
-            font-size: 1rem; /* Reduced size */
-        }
-
         /* Publications Section Styling */
         .publications {
             display: flex;
@@ -129,6 +126,8 @@
             display: flex; /* Flex to align content */
             flex-direction: column; /* Column for stacking */
             justify-content: space-between; /* Space between title and description */
+            align-items: center; /* Center items */
+            text-align: center; /* Center text */
         }
 
         /* Remove hover effect */
@@ -178,6 +177,11 @@
 
         .contact-links a:hover {
             text-decoration: underline;
+        }
+
+        /* Contact icons */
+        .contact-icons i {
+            margin-right: 5px; /* Space between icon and text */
         }
 
         /* Research Interest Styling */
@@ -241,7 +245,7 @@
         <!-- Education Section -->
         <section id="education" style="background-image: url('https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg');" data-aos="fade-up">
             <h2>Education</h2>
-            <div class="content">
+            <div class="">
                 <p class="education-item"><strong>PhD in Geotechnical Engineering</strong> - Shandong University, China (Expected Graduation: 2029)</p>
                 <p class="education-item"><strong>MSc in Geotechnical Engineering</strong> - Buein Zahra Technical University, Iran (2017 - 2020)</p>
                 <p class="education-item"><strong>BSc in Civil Engineering</strong> - Buein Zahra Technical University, Iran (2013 - 2017)</p>
@@ -253,13 +257,16 @@
             <h2>Research Interests</h2>
             <div class="research-container">
                 <div class="research-box">
-                    <p><strong>Geoenvironmental Engineering:</strong><br> Remediation of Contaminated Soil, Sustainable Soil Stabilization, Landfill Engineering</p>
+                    <p><strong>Geoenvironmental Engineering:</strong><br> Remediation of Contaminated Soil, Sustainable Soil Stabilization, Landfill Engineering
+                    </p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Geotechnical Engineering:</strong><br> Site Characterization, Soil Mechanics and Testing</p>
+                    <p><strong>Geotechnical Engineering:</strong><br> Site Characterization, Soil Mechanics and Testing
+                    </p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Environmental Science:</strong><br> Circular Economy, Life Cycle Assessment, Climate Change Impacts</p>
+                    <p><strong>Environmental Science:</strong><br> Circular Economy, Life Cycle Assessment, Climate Change Impacts
+                    </p>
                 </div>
             </div>
         </section>
