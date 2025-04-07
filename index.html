@@ -31,16 +31,16 @@
         .container {
             display: flex;
             flex-direction: row; /* Align sections horizontally */
-            height: 100vh; /* Full viewport height */
+            height: 90vh; /* Slightly reduced for a smaller screen */
             scroll-snap-type: x mandatory; /* Enable snapping */
-            overflow-x: scroll; /* Enable horizontal scrolling */
+            overflow-x: auto; /* Enable horizontal scrolling */
             scroll-behavior: smooth; /* Smooth scrolling */
         }
 
         section {
             flex: 0 0 100vw; /* Full width of the viewport */
             height: 100%; /* Full height */
-            padding: 5rem 2rem;
+            padding: 3rem 2rem; /* Reduced padding */
             scroll-snap-align: start; /* Snap each section */
             display: flex;
             flex-direction: column;
@@ -107,40 +107,40 @@
             font-size: 1rem; /* Reduced size */
         }
 
-        /* Grid for publications */
-        .papers {
-            display: flex; /* Changed to flexbox for drag scrolling */
-            overflow-x: auto; /* Enable horizontal scrolling */
-            scroll-snap-type: x mandatory; /* Enable snapping */
-            margin-top: 1rem;
+        /* Publications Section Styling */
+        .publications {
+            display: flex;
+            flex-direction: column; /* Vertical list */
+            overflow-y: auto; /* Enable vertical scrolling */
+            height: 400px; /* Fixed height for the publication list */
             width: 100%; /* Full width */
             z-index: 2; /* Above overlay */
+            padding: 10px; /* Padding for the list */
+            background: rgba(255, 255, 255, 0.1); /* Slightly light background for clarity */
         }
 
-        .paper-card {
-            min-width: 300px; /* Maintain min width for cards */
+        .publication-item {
             background: var(--secondary-color);
             border-radius: 8px;
             padding: 1rem;
-            transition: transform 0.3s, box-shadow 0.3s; /* Add shadow effect */
+            margin-bottom: 10px; /* Space between items */
             color: white;
-            position: relative; /* For hover effects */
-            margin-right: 1rem; /* Margin for spacing between cards */
+            transition: transform 0.3s, box-shadow 0.3s; /* Add shadow effect */
         }
 
-        .paper-card:hover {
+        .publication-item:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Elevated shadow effect */
         }
 
         /* Link styles */
-        .paper-card a {
+        .publication-item a {
             color: white;
             text-decoration: underline;
             transition: color 0.3s; /* Transition for link color change */
         }
 
-        .paper-card a:hover {
+        .publication-item a:hover {
             color: var(--highlight-color); /* Change color on hover */
         }
 
@@ -158,8 +158,10 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            justify-content: center; /* Center the items in Contact Me section */
+            justify-content: flex-start; /* Align items to the left */
             font-size: 1.25rem; /* Slightly reduced size */
+            margin-left: 20px; /* Added margin from the left side */
+            text-align: left; /* Align text to the left */
         }
 
         .contact-links a {
@@ -205,12 +207,13 @@
             <div class="about-image" style="background-image: url('https://static.wixstatic.com/media/f8e62f_75a126d4493f4af39645129e594faed1~mv2.jpg/v1/crop/x_0,y_278,w_1009,h_1009/fill/w_470,h_470,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/23.jpg');"></div>
             <h2>About Me</h2>
             <div class="content">
-                <p>I am a PhD student specializing in Geoenvironmental Engineering. My research focuses on the interactions between contaminants and soil properties, and I am passionate about sustainable environmental practices.</p>
+                <p>My name is Saeid NIKKHAH NASAB. I am a PhD student specializing in Geoenvironmental Engineering. My research focuses on the interactions between contaminants and soil properties, and I am passionate about sustainable environmental practices. I have published several papers in renowned journals and am actively involved in exploring innovative solutions in the field of geotechnics.</p>
+                <p>With a strong foundation in civil engineering and extensive experience in various projects, I aim to contribute to the development of sustainable engineering practices that address environmental challenges. I am dedicated to lifelong learning and continuously seek to expand my knowledge and expertise.</p>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education" style="background-image: url('https://c1.wallpaperflare.com/preview/127/366/443/library-book-bookshelf-read.jpg');" data-aos="fade-up">
+        <section id="education" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200907/pngtree-graduation-cap-school-supplies-blackboard-education-background-image_397993.jpg');" data-aos="fade-up">
             <h2>Education</h2>
             <div class="content">
                 <p class="education-item"><strong>PhD in Geotechnical Engineering</strong> - Shandong University, China (Expected Graduation: 2029)</p>
@@ -225,10 +228,9 @@
             <div class="content">
                 <p>My research encompasses a variety of areas including:</p>
                 <ul>
-                    <li>Environmental Geotechnics</li>
-                    <li>Soil Remediation Techniques</li>
-                    <li>Landfill and Waste Management</li>
-                    <li>Environmental Impact Assessments</li>
+                    <li>Geoenvironmental Engineering: Remediation of Contaminated Soil, Sustainable Soil Stabilization, Fate of Contaminants in Soil, And Landfill Engineering</li>
+                    <li>Geotechnical Engineering: Site Characterization, Multi-Physical Processes in Geomaterials, Soil Mechanics and Testing, And Erosion Mitigation</li>
+                    <li>Environmental Science and Sustainability: Circular Economy, Life Cycle Assessment, Climate Change Impacts, and Remote Sensing</li>
                 </ul>
             </div>
         </section>
@@ -236,28 +238,28 @@
         <!-- Publications Section -->
         <section id="publications" style="background-image: url('https://w0.peakpx.com/wallpaper/972/48/HD-wallpaper-stack-of-books-blue-background-education-concepts-books-library-school-learning-concepts.jpg');" data-aos="fade-up">
             <h2>Publications</h2>
-            <div class="papers">
-                <div class="paper-card" data-aos="flip-left">
+            <div class="publications">
+                <div class="publication-item">
                     <h3>"An Investigation on The Triaxial Changes of Zinc Contaminated Clayey Sand"</h3>
                     <p>International Journal of Geomechanics, 2024</p>
                     <p><a href="https://doi.org/10.1061/IJGNAI.GMENG-8197" target="_blank">Link to Paper</a></p>
                 </div>
-                <div class="paper-card" data-aos="flip-left">
+                <div class="publication-item">
                     <h3>"An Experimental Study of Sand–Clay Mixtures Contaminated with Lead and Zinc Heavy Metals"</h3>
                     <p>Journal of Hazardous, Toxic, and Radioactive Waste, 2021</p>
                     <p><a href="https://doi.org/10.1061/(asce)hz.2153-5515.0000631" target="_blank">Link to Paper</a></p>
                 </div>
-                <div class="paper-card" data-aos="flip-left">
+                <div class="publication-item">
                     <h3>"Physicochemical Changes of Lead (II) Contaminated Sand–Clay Mixture"</h3>
                     <p>SN Applied Sciences, 2020</p>
                     <p><a href="https://doi.org/10.1007/s42452-020-03299-5" target="_blank">Link to Paper</a></p>
                 </div>
-                <div class="paper-card" data-aos="flip-left">
+                <div class="publication-item">
                     <h3>"Seismic Performance of Tank Foundations Improved with Stone Columns"</h3>
                     <p>Civil Engineering Journal, 2020</p>
                     <p><a href="https://doi.org/10.14311/CEJ.2020.03.0029" target="_blank">Link to Paper</a></p>
                 </div>
-                <div class="paper-card" data-aos="flip-left">
+                <div class="publication-item">
                     <h3>"Soil Improvement" [BOOK]</h3>
                     <p>Qazvin Academic Center for Education, Culture and Research, 2019</p>
                     <p><a href="https://acecr.ac.ir/fa/news/9240" target="_blank">Link to Book</a></p>
@@ -266,7 +268,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" style="background-image: url('https://www.shutterstock.com/image-photo/contact-us-concept-wood-block-600nw-1628797483.jpg');" data-aos="fade-up">
+        <section id="contact" style="background-image: url('https://img.freepik.com/premium-photo/signs-e-mail-phone-newsletter-wooden-blocks-blue-background-copy-space-text_738732-60.jpg');" data-aos="fade-up">
             <h2>Contact Me</h2>
             <div class="content">
                 <div class="contact-links">
@@ -322,35 +324,6 @@
                     behavior: 'smooth',
                 });
             }
-        });
-
-        // Make publications section horizontally draggable
-        let isDown = false;
-        let startX;
-        let scrollLeft;
-
-        const papers = document.querySelector('.papers');
-
-        papers.addEventListener('mousedown', (e) => {
-            isDown = true;
-            startX = e.pageX - papers.offsetLeft;
-            scrollLeft = papers.scrollLeft;
-        });
-
-        papers.addEventListener('mouseleave', () => {
-            isDown = false;
-        });
-
-        papers.addEventListener('mouseup', () => {
-            isDown = false;
-        });
-
-        papers.addEventListener('mousemove', (e) => {
-            if (!isDown) return; // Stop the function if mouse is not down
-            e.preventDefault();
-            const x = e.pageX - papers.offsetLeft;
-            const walk = (x - startX) * 2; // The distance to scroll
-            papers.scrollLeft = scrollLeft - walk;
         });
 
         // Resize event to maintain horizontal scrolling
