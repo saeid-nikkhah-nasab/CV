@@ -4,37 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>PhD Student Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --teal: #009688;
-            --light-teal: #B2DFDB;
-            --dark-teal: #004D40;
-            --white: #ffffff;
-            --gray: #f2f2f2;
+            --primary-color: #003366; /* Deep blue */
+            --secondary-color: #00509E; /* Lighter blue */
+            --accent-color: #E6F1F8; /* Soft light background */
+            --text-color: #333333; /* Dark gray for text */
+            --light-gray: #F5F5F5; /* Light gray for backgrounds */
         }
 
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--gray);
-            color: var(--dark-teal);
+            background-color: var(--light-gray);
+            color: var(--text-color);
             scroll-behavior: smooth;
         }
 
         header {
-            background-color: var(--teal);
-            padding: 1rem;
+            background-color: var(--primary-color);
+            padding: 1.5rem;
             text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            color: var(--white);
+            color: white;
         }
 
         nav {
@@ -43,7 +39,7 @@
 
         nav a {
             margin: 0 1rem;
-            color: var(--white);
+            color: white;
             text-decoration: none;
             font-weight: 500;
         }
@@ -53,32 +49,54 @@
         }
 
         section {
-            padding: 2rem;
+            padding: 4rem 2rem;
             text-align: center;
+            background-color: var(--accent-color);
+            margin: 2rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .projects {
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .projects, .papers {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .project-card {
-            background: var(--light-teal);
+        .project-card, .paper-card {
+            background: var(--secondary-color);
             border-radius: 8px;
             padding: 1rem;
             transition: transform 0.3s;
+            color: white;
         }
 
-        .project-card:hover {
+        .project-card:hover, .paper-card:hover {
             transform: scale(1.05);
         }
 
         footer {
-            background-color: var(--teal);
-            color: var(--white);
-            padding: 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
             text-align: center;
+        }
+
+        .contact-links a {
+            margin: 0 15px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -87,10 +105,12 @@
 
     <!-- Header Section -->
     <header>
-        <h1>My Portfolio</h1>
+        <h1>PhD Student Portfolio</h1>
         <nav>
             <a href="#about">About</a>
-            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -98,28 +118,47 @@
     <!-- About Section -->
     <section id="about" data-aos="fade-up">
         <h2>About Me</h2>
-        <p>Hi! I'm a passionate web developer with a knack for creating beautiful and functional websites. I love coding and I'm always eager to learn new technologies.</p>
+        <p>I am a PhD student specializing in Geoenvironmental Engineering. My research focuses on the interactions between contaminants and soil properties, and I am passionate about sustainable environmental practices.</p>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" data-aos="fade-up">
-        <h2>My Projects</h2>
-        <div class="projects">
-            <div class="project-card" data-aos="flip-left">
-                <h3>Project 1</h3>
-                <p>Description of project 1.</p>
+    <!-- Education Section -->
+    <section id="education" data-aos="fade-up">
+        <h2>Education</h2>
+        <p><strong>PhD in Geoenvironmental Engineering</strong> - University Name (Expected Graduation: 2025)</p>
+        <p><strong>MSc in Geotechnical Engineering</strong> - University Name (2017 - 2020)</p>
+        <p><strong>BSc in Civil Engineering</strong> - University Name (2013 - 2017)</p>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" data-aos="fade-up">
+        <h2>Research Interests</h2>
+        <p>My research encompasses a variety of areas including:</p>
+        <ul>
+            <li>Contaminant Transport in Soil</li>
+            <li>Soil Remediation Techniques</li>
+            <li>Landfill and Waste Management</li>
+            <li>Environmental Impact Assessments</li>
+        </ul>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" data-aos="fade-up">
+        <h2>Publications</h2>
+        <div class="papers">
+            <div class="paper-card" data-aos="flip-left">
+                <h3>Paper Title 1</h3>
+                <p>Journal Name, Year</p>
+                <p><a href="#" style="color: white;">Link to Paper</a></p>
             </div>
-            <div class="project-card" data-aos="flip-left">
-                <h3>Project 2</h3>
-                <p>Description of project 2.</p>
+            <div class="paper-card" data-aos="flip-left">
+                <h3>Paper Title 2</h3>
+                <p>Journal Name, Year</p>
+                <p><a href="#" style="color: white;">Link to Paper</a></p>
             </div>
-            <div class="project-card" data-aos="flip-left">
-                <h3>Project 3</h3>
-                <p>Description of project 3.</p>
-            </div>
-            <div class="project-card" data-aos="flip-left">
-                <h3>Project 4</h3>
-                <p>Description of project 4.</p>
+            <div class="paper-card" data-aos="flip-left">
+                <h3>Paper Title 3</h3>
+                <p>Journal Name, Year</p>
+                <p><a href="#" style="color: white;">Link to Paper</a></p>
             </div>
         </div>
     </section>
@@ -127,7 +166,11 @@
     <!-- Contact Section -->
     <section id="contact" data-aos="fade-up">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        <p>Email: <a href="mailto:your-email@example.com" style="color: var(--primary-color);">your-email@example.com</a></p>
+        <div class="contact-links">
+            <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
+            <a href="https://github.com/yourprofile">GitHub</a>
+        </div>
     </section>
 
     <!-- Footer Section -->
