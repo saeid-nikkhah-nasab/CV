@@ -466,7 +466,7 @@
             });
         }
 
-        container.addEventListener('wheel', (e) => {
+        function handleScroll(e) {
             e.preventDefault();
             if (window.innerWidth > 768) {
                 // Horizontal scroll for larger screens
@@ -488,7 +488,9 @@
                     behavior: 'smooth'
                 });
             }
-        });
+        }
+
+        container.addEventListener('wheel', handleScroll);
 
         window.addEventListener('resize', () => {
             if (window.innerWidth > 768) {
