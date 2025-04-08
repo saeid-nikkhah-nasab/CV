@@ -194,6 +194,7 @@
             align-items: center;
             justify-content: center;
             min-height: 300px;
+            text-align: center;
         }
 
         .contact-links a {
@@ -201,6 +202,7 @@
             text-decoration: none;
             transition: color 0.3s ease;
             font-size: 1.5rem;
+            display: block;
         }
 
         .contact-links a:hover {
@@ -401,19 +403,19 @@
                 <div class="publication-item">
                     <h3>Physicochemical Changes in Lead-Contaminated Soils</h3>
                     <p><strong>SN Applied Sciences</strong> | 2020</p>
-                    <p>The study of geotechnical and chemical changes in lead-contaminated soils</p>
+                    <p>Long-term study of chemical changes in contaminated substrates</p>
                     <a href="https://doi.org/10.1007/s42452-020-03299-5" target="_blank">View Full Text</a>
                 </div>
                 <div class="publication-item">
                     <h3>Seismic Performance of Tank Foundations</h3>
                     <p><strong>Civil Engineering Journal</strong> | 2020</p>
-                    <p>Analysis of stone column reinforcement in seismic zones using ABAQUS</p>
+                    <p>Analysis of stone column reinforcement in seismic zones</p>
                     <a href="https://doi.org/10.14311/CEJ.2020.03.0029" target="_blank">View Full Text</a>
                 </div>
                 <div class="publication-item">
                     <h3>Soil Improvement Techniques [Book]</h3>
                     <p><strong>Qazvin Academic Press</strong> | 2019</p>
-                    <p>Comprehensive guide to modern soil improvement methods</p>
+                    <p>Comprehensive guide to modern soil stabilization methods</p>
                     <a href="https://acecr.ac.ir/fa/news/9240" target="_blank">View Publication</a>
                 </div>
             </div>
@@ -450,48 +452,47 @@
             duration: 1000
         });
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+
         const sections = document.querySelectorAll('section');
         const container = document.querySelector('.container');
         let currentSection = 0;
         sections[currentSection].classList.add('fade-in');
+
+        function scrollToSection(sectionIndex) {
+            container.scrollTo({
+                top: 0, // Ensure vertical position is at the top
+                left: sectionIndex * window.innerWidth,
+                behavior: 'smooth'
+            });
+        }
+
         container.addEventListener('wheel', (e) => {
             e.preventDefault();
-            if (e.deltaY > 0 && currentSection < sections.length - 1) {
-                sections[currentSection].classList.remove('fade-in');
-                currentSection++;
-                sections[currentSection].classList.add('fade-in');
-                container.scrollTo({
-                    left: currentSection * window.innerWidth,
-                    behavior: 'smooth'
-                });
-            } else if (e.deltaY < 0 && currentSection > 0) {
-                sections[currentSection].classList.remove('fade-in');
-                currentSection--;
-                sections[currentSection].classList.add('fade-in');
-                container.scrollTo({
-                    left: currentSection * window.innerWidth,
+            if (window.innerWidth > 768) {
+                // Horizontal scroll for larger screens
+                if (e.deltaY > 0 && currentSection < sections.length - 1) {
+                    sections[currentSection].classList.remove('fade-in');
+                    currentSection++;
+                } else if (e.deltaY < 0 && currentSection > 0) {
+                    sections[currentSection].classList.remove('fade-in');
+                    currentSection--;
+                }
+                if (currentSection >= 0 && currentSection < sections.length) {
+                    sections[currentSection].classList.add('fade-in');
+                    scrollToSection(currentSection);
+                }
+            } else {
+                // Vertical scroll for smaller screens
+                window.scrollBy({
+                    top: e.deltaY,
                     behavior: 'smooth'
                 });
             }
         });
+
         window.addEventListener('resize', () => {
-            container.scrollTo({
-                left: currentSection * window.innerWidth,
-                behavior: 'auto'
-            });
-        });
-        document.addEventListener('keydown', (e) => {
-            const pubList = document.querySelector('.publications');
-            if (e.key === 'ArrowDown') {
-                pubList.scrollBy({
-                    top: 100,
-                    behavior: 'smooth'
-                });
-            } else if (e.key === 'ArrowUp') {
-                pubList.scrollBy({
-                    top: -100,
-                    behavior: 'smooth'
-                });
+            if (window.innerWidth > 768) {
+                scrollToSection(currentSection);
             }
         });
     </script>
