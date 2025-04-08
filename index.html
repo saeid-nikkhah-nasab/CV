@@ -94,8 +94,14 @@
             background-size: cover;
             border: 3px solid var(--highlight-color);
             box-shadow: 0 0 20px rgba(233, 69, 96, 0.4);
+            transition: transform 0.3s ease; /* Add transition for smooth effect */
             
         }
+
+        .about-image:hover {
+             transform: scale(1.1) rotate(5deg); /* Scale and rotate on hover */
+            box-shadow: 0 0 30px rgba(233, 69, 96, 0.6); /* Enhance shadow on hover */
+         }
         
         .about-content {
             max-width: 600px;
@@ -131,8 +137,8 @@
 
         .publication-item {
             background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            margin-bottom: 1.2rem;
+            padding: 1.2rem;
+            margin-bottom: 1.1rem;
             border-left: 4px solid var(--highlight-color);
             border-radius: 8px;
             transition: transform 0.3s ease;
@@ -199,6 +205,7 @@
             color: var(--highlight-color);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 1.5rem; /* Increased font size */
         }
 
         .contact-links a:hover {
@@ -254,6 +261,49 @@
             background: var(--highlight-color);
             border-radius: 10px;
         }
+
+                /* Education Section Styles */
+        #education .content {
+            width: 100%;
+            max-width: 700px;
+            /* Adjust as needed */
+            margin: 0 auto;
+            position: relative;
+            padding: 1rem;
+        }
+
+        #education .timeline {
+            list-style: none;
+            padding: 0;
+        }
+
+        #education .timeline-item {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        #education .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 0.5rem;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--highlight-color);
+            border-radius: 50%;
+        }
+
+        #education .timeline-item p {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Grey background for text */
+            padding: 0.75rem;
+            border-radius: 8px;
+            margin: 0;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
     </style>
 </head>
 
@@ -288,11 +338,11 @@
             <h2>Education</h2>
             <div class="content">
                 <div style="line-height: 2;">
-                <p class="education-item"><strong>PhD in Geotechnical Engineering</strong> - Shandong University, China
+                <p class="education-item"><strong>PhD in Geotechnical Engineering</strong> <br> Shandong University, China
                     (2024-2028)</p>
-                <p class="education-item"><strong>MSc in Geotechnical Engineering</strong> - Buein Zahra Technical
+                <p class="education-item"><strong>MSc in Geotechnical Engineering</strong> <br> Buein Zahra Technical
                     University, Iran (2017-2020)</p>
-                <p class="education-item"><strong>BSc in Civil Engineering</strong> - Buein Zahra Technical University,
+                <p class="education-item"><strong>BSc in Civil Engineering</strong> <br> Buein Zahra Technical University,
                     Iran (2013-2017)</p>
                 </div>    
             </div>
@@ -304,15 +354,15 @@
             <h2>Research Interests</h2>
             <div class="research-container">
                 <div class="research-box">
-                    <p><strong>Geoenvironmental Engineering</strong><br>
+                    <p><strong>Geoenvironmental Engineering</strong> <br>
                         Soil remediation, Waste containment systems, Sustainable stabilization</p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Geotechnical Engineering</strong><br>
+                    <p><strong>Geotechnical Engineering</strong> <br>
                         Contaminated soil behavior, Advanced testing methods, Microscale analysis</p>
                 </div>
                 <div class="research-box">
-                    <p><strong>Environmental Scinece</strong><br>
+                    <p><strong>Environmental Scinece</strong> <br>
                         Life cycle assessment, Climate adaptation strategies, Circular economy</p>
                 </div>
             </div>
